@@ -27,6 +27,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: 350,
     alignItems: "center",
+    "@media (max-width: 1450px)": {
+      width: 300,
+    },
+    "@media (max-width: 800px)": {
+      width: 350,
+    }
   },
   media: {
     height: 200,

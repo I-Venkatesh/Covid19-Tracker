@@ -37,6 +37,47 @@
     color: #f9fafc;
     background-color: #ac1c09;
   }
+  @media (max-width: 1450px) {
+    .table{
+      padding: 10px 35px;
+    } 
+
+    .table-top{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0px;
+  }
+  .pagination{
+      display: flex;
+      /* padding: 20px; */
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      /* margin: 15px; */
+      border-radius: 8px;
+    }
+    .paginationBttns{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    .paginationBttns a{
+      padding: 6px;
+      margin: 8px;
+      border: 1px solid #777779;
+      color: #01010c;
+      cursor: pointer;
+    }
+    .paginationBttns a:hover{
+      color: rgb(255, 255, 255);
+      background-color: rgb(18, 19, 65);
+    }
+    .paginationActive a{
+      color: #f9fafc;
+      background-color: #ac1c09;
+    }
+  }
   @media (max-width: 800px) {
     .table{
       padding: 10px 5px;

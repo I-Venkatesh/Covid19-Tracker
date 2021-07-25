@@ -20,6 +20,12 @@ const useStyles = makeStyles({
   table: {
     width: "100%",
   },
+  img:{
+    paddingRight: "20px",
+    alignItem: "center",
+    height:"16px",
+    width:"25px"
+  }
 });
 
 const StyledTableCell = withStyles((theme) => ({
@@ -29,10 +35,22 @@ const StyledTableCell = withStyles((theme) => ({
     fontSize: 19,
     fontWeight: 400,
     height: 50,
+    "@media (max-width: 1450px)": {
+        fontSize: 15,
+    },
+    "@media (max-width: 1110px)": {
+        fontSize: 12,
+    },
   },
   body: {
     fontSize: 19,
     fontWeight: 500,
+    "@media (max-width: 1450px)": {
+        fontSize: 14,
+    },
+    "@media (max-width: 1110px)": {
+        fontSize: 11,
+    },
   },
 }))(TableCell);
 
@@ -173,11 +191,8 @@ function CovidTable() {
                 <StyledTableRow>
                   <StyledTableCell>{l++}</StyledTableCell>
                   <StyledTableCell>
-                    <img
+                    <img className={classes.img}
                       src={data.countryInfo.flag}
-                      height="20px"
-                      width="30px"
-                      style={{ paddingRight: "20px", alignItem: "center" }}
                     />
                     <strong>{data.country}</strong>
                   </StyledTableCell>
