@@ -17,7 +17,7 @@ import activeImage from "../../img/active.jpg";
 import deathImage from "../../img/deaths.jpg";
 import recoveredImage from "../../img/recovered.jpg";
 
-
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { CovidContext } from "../../context/CovidContext";
 
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "@media (max-width: 800px)": {
       width: 350,
-    }
+    },
   },
   media: {
     height: 200,
@@ -142,7 +142,11 @@ export default function Header() {
                     gutterBottom
                     variant="h5"
                     component="h2"
-                    style={{ display: "flex", justifyContent: "center", fontWeight: 600 }}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      fontWeight: 600,
+                    }}
                   >
                     Coronavirus Cases
                   </Typography>
@@ -151,11 +155,19 @@ export default function Header() {
                     // color="textSecondary"
                     variant="h5"
                     component="h2"
-                    style={{ display: "flex", justifyContent: "center", color: "#5a5958"}}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "#5a5958",
+                    }}
                   >
-                    {country === ""
-                      ? global && commaNumber(global.cases)
-                      : commaNumber(selected.cases)}
+                    {country === "" ? (
+                      global && commaNumber(global.cases)
+                    ) : commaNumber(selected.cases) ? (
+                      commaNumber(selected.cases)
+                    ) : (
+                      <CircularProgress />
+                    )}
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -174,7 +186,11 @@ export default function Header() {
                     gutterBottom
                     variant="h5"
                     component="h2"
-                    style={{ display: "flex", justifyContent: "center", fontWeight: 600 }}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      fontWeight: 600,
+                    }}
                   >
                     Deaths
                   </Typography>
@@ -183,11 +199,19 @@ export default function Header() {
                     color="textSecondary"
                     variant="h5"
                     component="h2"
-                    style={{ display: "flex", justifyContent: "center" , color: "#5a5958"}}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "#5a5958",
+                    }}
                   >
-                    {country === ""
-                      ? global && commaNumber(global.deaths)
-                      : commaNumber(selected.deaths)}
+                    {country === "" ? (
+                      global && commaNumber(global.deaths)
+                    ) : commaNumber(selected.deaths) ? (
+                      commaNumber(selected.deaths)
+                    ) : (
+                      <CircularProgress />
+                    )}
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -206,7 +230,11 @@ export default function Header() {
                     gutterBottom
                     variant="h5"
                     component="h2"
-                    style={{ display: "flex", justifyContent: "center" , fontWeight: 600}}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      fontWeight: 600,
+                    }}
                   >
                     Recovered
                   </Typography>
@@ -215,11 +243,19 @@ export default function Header() {
                     color="textSecondary"
                     variant="h5"
                     component="h2"
-                    style={{ display: "flex", justifyContent: "center", color: "#5a5958" }}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "#5a5958",
+                    }}
                   >
-                    {country === ""
-                      ? global && commaNumber(global.recovered)
-                      : commaNumber(selected.recovered)}
+                    {country === "" ? (
+                      global && commaNumber(global.recovered)
+                    ) : commaNumber(selected.recovered) ? (
+                      commaNumber(selected.recovered)
+                    ) : (
+                      <CircularProgress />
+                    )}
                   </Typography>
                 </CardContent>
               </CardActionArea>
